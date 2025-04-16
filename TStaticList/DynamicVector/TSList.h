@@ -46,5 +46,31 @@ bool TSList_is_empty(TSList* );
  * @return bool Retorna true se a lista estiver cheia (de acordo com alguma possível restrição de implementação), false caso contrário ou se o ponteiro da lista for nulo.
  */
 bool TSList_is_full(TSList* );
+/* Lista de exercícios */
+/**
+ * Exercício 1A
+ * Concatena duas listas usando as funções já existentes (TSList_insert, etc)
+ * @param TSList* Lista 1
+ * @param TSList* Lista 2
+ * @return TSList* ponteiro para a lista criada com o resultado da concatenação
+ */
+TSList* TSList_concatenate_1(TSList*, TSList*);
 
+/**
+ * Exercício 1B
+ * Concatena duas listas sem usar as funções já existentes (TSList_insert, etc)
+ * @param TSList* Lista 1
+ * @param TSList* Lista 2
+ * @return TSList* ponteiro para a lista criada com o resultado da concatenação
+ */
+TSList* TSList_concatenate_2(TSList*, TSList*);
+
+/**
+ * Exercício 2
+ * Tenta deletar os n primeiros elementos da lista.
+ * @param TSList* ponteiro para a a lista
+ * @param unsigned int o valor da variável n
+ * @return bool informando o sucesso ou não da operação
+ */
+bool TSList_delete_n(TSList*, unsigned int);
 #endif
