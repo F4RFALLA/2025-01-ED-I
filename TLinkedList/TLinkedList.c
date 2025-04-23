@@ -63,3 +63,37 @@ TNo* TNo_createNFill(int info){
     }
     return novo;
 }
+
+TLinkedList* list_concatenate(TLinkedList* l1, TLinkedList* l2){
+    TLinkedList* l_result = list_create();
+    if(l_result){
+        TNo* aux = l1->inicio;
+        while(aux!=NULL){
+            list_insert_end(l_result, aux->info);
+            aux = aux->prox;
+        }
+        aux = l2->inicio;
+        while(aux!=NULL){
+            list_insert_end(l_result, aux->info);
+            aux = aux->prox;
+        }
+    }
+    return l_result;
+}
+
+bool list_delete_begin(TLinkedList* lista){
+    if(lista->inicio == NULL)
+        return false;
+    TNo* aux = lista->inicio;
+    lista->inicio = lista->inicio->prox;
+    free(aux);
+    return true;
+}
+
+bool list_delete_n(TLinkedList* lista, unsigned int n){
+    while(n-->0){
+        if(!list_delete_begin(lista))
+            return false;
+    }
+    return true;
+}
