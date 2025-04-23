@@ -8,6 +8,8 @@ TLinkedList* list_create();
 
 bool list_insert_begin(TLinkedList*, int);
 
+bool list_insert_end(TLinkedList*, int);
+
 void list_print(TLinkedList*);
 
 

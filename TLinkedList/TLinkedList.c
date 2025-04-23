@@ -29,6 +29,23 @@ bool list_insert_begin(TLinkedList* lista, int info){
     return true;
 }
 
+bool list_insert_end(TLinkedList* lista, int info){
+    TNo* novo = TNo_createNFill(info);
+    if(novo == NULL) return false;
+    //A lista está vazia?
+    if(lista->inicio == NULL)
+        lista->inicio = novo;
+    else{
+        //Lista nao vazia, temos que encontrar o último elemento
+        TNo* aux = lista->inicio;
+        while(aux->prox!=NULL)
+            aux = aux->prox;
+        aux->prox = novo;
+    }
+    return true;
+}
+
+
 void list_print(TLinkedList* lista){
     TNo* aux = lista->inicio;
     while(aux!=NULL){
