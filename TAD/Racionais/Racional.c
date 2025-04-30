@@ -12,6 +12,10 @@ struct _racional{
  * @return TRacional* instância para um Racional
  */
 TRacional* TRacional_create(int num, int den){
+    //Nao aceita criar frações cujo denominador eh igual a 0
+    if(den == 0)
+        return NULL;
+
     TRacional* novo = malloc(sizeof(TRacional));
     if(novo){
         novo->num = num;
