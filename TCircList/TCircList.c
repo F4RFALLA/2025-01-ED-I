@@ -64,8 +64,9 @@ bool list_insert_begin(TCircList* lista, int info){
         aux->prox = novo;
         //5) Próximo de novo deve apontar para o início;
         novo->prox = lista->inicio;
-        //6) Início passa a apontar para o novo nó; 
+        
     }
+    //6) Início passa a apontar para o novo nó; 
     lista->inicio = novo;
     return true;
 }
