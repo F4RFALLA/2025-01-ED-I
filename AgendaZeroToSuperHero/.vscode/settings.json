@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "tlinkedlist.h": "c",
+        "tcontato.h": "c"
+    }
+}
